@@ -1,6 +1,6 @@
 <?php
 namespace NoticeAppBundle\Controller;
-use NoticeAppBundle\Entity\Nnotice;
+use NoticeAppBundle\Entity\Notice;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
