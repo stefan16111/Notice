@@ -1,0 +1,47 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+<div class="row">
+    <section id="Categories" class="bg-success">
+        <div class="col-md-4 bg-success">
+            <table class="table table-hover">
+                <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <td>{{ category.name }}</td>
+                        <td>({{ category|length }})</td>
+                        <td><a class="btn btn-small btn-warning" href="{{ path('category_show', { 'id': category.id }) }}">wejdź na kategorie</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="Notice">
+        <div class=" col-md-8 bg-info">
+        <h1>Lista Ogłoszeń</h1>
+            <table class="table table-hover">
+            <tbody>
+            {% for notice in notices %}
+                <th>Zdjęcie</th>
+                <th>Tytuł</th>
+                <th>Opis</th>
+                <th>Data wygaśnięcia</th>
+                <th>użytkownik</th>
+                <tr>
+                    <td><a href="{{ path('notice_show', { 'id': notice.id }) }}"><img src="{{ notice.photo }}"></a></td>
+                    <td>{{ notice.title }}</td>
+                    <td>{{ notice.description }}</td>
+                    <td>{% if notice.expirationDate %}{{ notice.expirationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{{ notice.user }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+            {% if is_granted("ROLE_USER") %}
+                <a class="btn btn-bg btn-success" href="{{ path('notice_new') }}">dodaj ogłoszenie</a>
+            {% endif %}
+        </div>
+        </div>
+    </section>
+{% endblock %}

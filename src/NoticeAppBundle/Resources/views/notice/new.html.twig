@@ -1,0 +1,17 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-offset-4 col-md-4">
+        <h1>Tworzenie ogłoszenia</h1>
+
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input class="btn btn-bg btn-success" type="submit" value="Create" />
+        {{ form_end(form) }}
+
+                <a class="btn btn-bg btn-info" href="{{ path('notice_index') }}">powrót do tablicy ogłoszeń</a>
+
+    </div>
+</div>
+{% endblock %}

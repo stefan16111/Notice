@@ -1,0 +1,40 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4 bg-success">
+               <h1>Ogłoszenie</h1>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ notice.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Tytuł</th>
+                        <td>{{ notice.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>Opis</th>
+                        <td>{{ notice.description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Zdjęcie</th>
+                        <td><img src="{{ notice.photo }}"></td>
+                    </tr>
+                    <tr>
+                        <th>Data wygaśnięcia</th>
+                        <td>{% if notice.expirationDate %}{{ notice.expirationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <ul>
+            <li>
+                <a class="btn btn-bg btn-info" href="{{ path('notice_index') }}">Powrót do ogłoszeń</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+{% endblock %}
