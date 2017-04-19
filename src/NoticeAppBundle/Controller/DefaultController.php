@@ -1,6 +1,7 @@
 <?php
 
 namespace NoticeAppBundle\Controller;
+
 use NoticeAppBundle\Entity\User;
 use NoticeAppBundle\Entity\Advertisement;
 use NoticeAppBundle\Entity\Categories;
@@ -12,12 +13,12 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="index")
      */
     public function indexAction()
     {
-        //return $this->render('NoticeAppBundle:Default:index.html.twig');
-        return $this->render('@App/index.html.twig');
+        return $this->render('NoticeAppBundle::index.html.twig');
+        //return $this->render('@App/index.html.twig');
     }
 
     /**

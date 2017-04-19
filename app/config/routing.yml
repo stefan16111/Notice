@@ -1,4 +1,4 @@
-notice_app:
+Notice:
     resource: "@NoticeAppBundle/Controller/"
     type:     annotation
     prefix:   /
