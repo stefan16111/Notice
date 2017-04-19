@@ -1,0 +1,25 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+<div class="row">
+    <div class=" col-md-offset-4 col-md-4 ">
+    <h1>Edycja kategorii</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input class="btn btn-bg btn-info" type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a class="btn btn-bg btn-info" href="{{ path('admin_page') }}">Powrót do panelu admina</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-bg btn-warning" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+</div>
+{% endblock %}
